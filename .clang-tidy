@@ -1,0 +1,134 @@
+# source: 
+# - https://github.com/ema-mil/style_guide
+#
+# resources:
+# - https://clang.llvm.org/extra/clang-tidy/
+# - https://clang.llvm.org/extra/clang-tidy/checks/list.html
+
+---
+FormatStyle: 'file'
+SystemHeaders: false
+WarningsAsErrors: 'readability-identifier-naming'
+HeaderFilterRegex: '.*'
+HeaderFileExtensions:
+  - ''
+  - h
+  - hh
+  - hpp
+  - hxx
+ImplementationFileExtensions:
+  - c
+  - cc
+  - cpp
+  - cxx
+Checks: "clang-diagnostic-*,
+         clang-analyzer-*,
+         *,
+         -altera-id-dependent-backward-branch,
+         -altera-struct-pack-align,
+         -altera-unroll-loops,
+         -boost-use-ranges,
+         -bugprone-easily-swappable-parameters,
+         -cppcoreguidelines-pro-type-reinterpret-cast,
+         -fuchsia-default-arguments-calls,
+         -fuchsia-default-arguments-declarations,
+         -fuchsia-overloaded-operator,
+         -fuchsia-statically-constructed-objects,
+         -google-objc-*,
+         -google-readability-todo,
+         -google-readability-namespace-comments,
+         -hicpp-multiway-paths-covered,
+         -hicpp-no-assembler,
+         -llvmlibc-inline-function-decl,
+         -llvmlibc-restrict-system-libc-headers,
+         -misc-non-private-member-variables-in-classes,
+         -modernize-use-auto,
+         -modernize-use-nodiscard,
+         -modernize-use-trailing-return-type,
+         -objc-*,
+         -openmp-exception-escape,
+         -openmp-use-default-none,
+         -performance-enum-size,
+         -portability-restrict-system-includes,
+         -llvmlibc-callee-namespace,
+         -llvmlibc-implementation-in-namespace,
+         -llvm-header-guard,
+         -readability-convert-member-functions-to-static,
+         -readability-identifier-length,
+         -readability-magic-numbers,
+         -readability-uppercase-literal-suffix,
+         -cert-dcl16-c,
+         -hicpp-uppercase-literal-suffix,
+         -cppcoreguidelines-non-private-member-variables-in-classes,
+         -hicpp-use-auto,
+         -cppcoreguidelines-avoid-magic-numbers,
+         -cppcoreguidelines-pro-type-union-access,
+         -cppcoreguidelines-owning-memory
+         "
+CheckOptions:
+  cppcoreguidelines-pro-type-const-cast.StrictMode: true
+  misc-include-cleaner.IgnoreHeaders: '^.*(?:pch|stdafx)\.h\w*$'
+  modernize-use-default-member-init.UseAssignment: true
+  performance-for-range-copy.WarnOnAllAutoCopies: true
+  readability-identifier-naming.AbstractClassCase: 'lower_case'
+  readability-identifier-naming.ClassCase: 'lower_case'
+  readability-identifier-naming.ClassConstantCase: 'lower_case'
+  readability-identifier-naming.ClassMemberCase: 'lower_case'
+  readability-identifier-naming.ClassMethodCase: 'lower_case'
+  readability-identifier-naming.ConceptCase: 'lower_case'
+  readability-identifier-naming.ConstantCase: 'lower_case'
+  readability-identifier-naming.ConstantMemberCase: 'lower_case'
+  readability-identifier-naming.ConstantParameterCase: 'lower_case'
+  readability-identifier-naming.ConstantPointerParameterCase: 'lower_case'
+  readability-identifier-naming.ConstexprFunctionCase: 'lower_case'
+  readability-identifier-naming.ConstexprMethodCase: 'lower_case'
+  readability-identifier-naming.ConstexprVariableCase: 'lower_case'
+  readability-identifier-naming.EnumCase: 'lower_case'
+  readability-identifier-naming.EnumConstantCase: 'lower_case'
+  readability-identifier-naming.FunctionCase: 'lower_case'
+  readability-identifier-naming.GlobalConstantCase: 'lower_case'
+  readability-identifier-naming.GlobalConstantPointerCase: 'lower_case'
+  readability-identifier-naming.GlobalFunctionCase: 'lower_case'
+  readability-identifier-naming.GlobalPointerCase: 'lower_case'
+  readability-identifier-naming.GlobalVariableCase: 'lower_case'
+  readability-identifier-naming.InlineNamespaceCase: 'lower_case'
+  readability-identifier-naming.LocalConstantCase: 'lower_case'
+  readability-identifier-naming.LocalConstantPointerCase: 'lower_case'
+  readability-identifier-naming.LocalPointerCase: 'lower_case'
+  readability-identifier-naming.LocalVariableCase: 'lower_case'
+  readability-identifier-naming.MacroDefinitionCase: 'UPPER_CASE'
+  readability-identifier-naming.MemberCase: 'lower_case'
+  readability-identifier-naming.MethodCase: 'lower_case'
+  readability-identifier-naming.NamespaceCase: 'lower_case'
+  readability-identifier-naming.ParameterCase: 'lower_case'
+  readability-identifier-naming.ParameterPackCase: 'lower_case'
+  readability-identifier-naming.PointerParameterCase: 'lower_case'
+  readability-identifier-naming.PrivateMemberCase: 'lower_case'
+  readability-identifier-naming.PrivateMemberPrefix: 'm_'
+  readability-identifier-naming.PrivateMethodCase: 'lower_case'
+  readability-identifier-naming.ProtectedMemberCase: 'lower_case'
+  readability-identifier-naming.ProtectedMemberPrefix: 'm_'
+  readability-identifier-naming.ProtectedMethodCase: 'lower_case'
+  readability-identifier-naming.PublicMemberCase: 'lower_case'
+  readability-identifier-naming.PublicMethodCase: 'lower_case'
+  readability-identifier-naming.ScopedEnumConstantCase: 'lower_case'
+  readability-identifier-naming.StaticConstantCase: 'lower_case'
+  readability-identifier-naming.StaticVariableCase: 'lower_case'
+  readability-identifier-naming.StructCase: 'lower_case'
+  readability-identifier-naming.TemplateParameterCase: 'lower_case'
+  readability-identifier-naming.TemplateParameterSuffix: '_t'
+  readability-identifier-naming.TemplateTemplateParameterCase: 'lower_case'
+  readability-identifier-naming.TemplateTemplateParameterSuffix: '_t'
+  readability-identifier-naming.TypeAliasCase: 'lower_case'
+  readability-identifier-naming.TypeAliasSuffix: '_t'
+  readability-identifier-naming.TypedefCase: 'lower_case'
+  readability-identifier-naming.TypedefSuffix: '_t'
+  readability-identifier-naming.TypeTemplateParameterCase: 'lower_case'
+  readability-identifier-naming.TypeTemplateParameterSuffix: '_t'
+  readability-identifier-naming.UnionCase: 'lower_case'
+  readability-identifier-naming.ValueTemplateParameterCase: 'lower_case'
+  readability-identifier-naming.ValueTemplateParameterSuffix: '_t'
+  readability-identifier-naming.VariableCase: 'lower_case'
+  readability-identifier-naming.VirtualMethodCase: 'lower_case'
+  readability-redundant-inline-specifier.StrictMode: true
+...
