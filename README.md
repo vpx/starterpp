@@ -1,6 +1,6 @@
 # Modern C++ Template
 
-A cross-platform C++ template using modules, CMake, continuous integration, unit tests, clang-format, clang-tidy, and a custom style guide.
+A modern, cross-platform C++ template that uses modules, continuous integration, CMake, unit tests, clang-format, clang-tidy, and includes a custom style guide. 
 
 Note: Manual updates to the contact information in the `SECURITY.md` and `CODE_OF_CONDUCT.md` files are required.
 
