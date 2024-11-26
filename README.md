@@ -1,27 +1,41 @@
-# C++ Modern Template
+# Modern C++ Template
 
-A C++ modern, cross-platform template that uses modules, continuous integration, cmake, unit tests, clang-format, clang-tidy and includes a custom style guide.
+A cross-platform C++ template using modules, CMake, continuous integration, unit tests, clang-format, clang-tidy, and a custom style guide.
 
-## Getting Started
-
-1. Clone the repository
-
-2. Update contact information in [SECURITY.md](docs/SECURITY.md) and [CODE_OF_CONDUCT.md](docs/CODE_OF_CONDUCT.md) files
+Note: Manual updates to the contact information in the `SECURITY.md` and `CODE_OF_CONDUCT.md` files are required.
 
 ## Building
 
-### Single-Configuration Generators
+### Requirements
 
-Single-configuration generators like Unix Makefiles and Ninja:
+In order to build modules is required CMake version `3.28` or higher.
 
-`cmake -B build/ -S . --DCMAKE_BUILD_TYPE=[Debug|Release|RelWithDebInfo|MinSizeRel]`
+The list of generators which support scanning sources for C++ modules include:
+ - Ninja
+ - Ninja Multi-Config
+ - Visual Studio 17 2022
 
-`cmake --build build/`
+Compilers which CMake natively supports module dependency scanning include:
+ - MSVC toolset `14.34` and newer (provided with Visual  Studio  `17.4`  and newer)
+ - LLVM/Clang `16.0` and newer
+ - GCC `14` (for the in-development branch, after 2023-09-20) and newer
 
-### Multi-Configuration Generators
+### Building with Ninja
 
-Multi-configuration generators like Visual Studio, XCode and Ninja Multi-Config:
+```bash
+cmake -G Ninja -B build/ -S . -DCMAKE_BUILD_TYPE=[Debug|Release|RelWithDebInfo|MinSizeRel]
+```
 
-`cmake -B build/ -S .`
+```bash
+cmake --build build/
+```
 
-`cmake --build build/ --config [Debug|Release|RelWithDebInfo|MinSizeRel]`
+### Building with Visual Studio (MSVC)
+
+```bash
+cmake -G "Visual Studio 17 2022" -B build/ -S .
+```
+
+```bash
+cmake --build build/ --config [Debug|Release|RelWithDebInfo|MinSizeRel]
+```
