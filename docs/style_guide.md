@@ -1,4 +1,4 @@
-[//]: # (source: https://github.com/ema-mil/style_guide)
+[//]: # (source: https://github.com/ema-mil/cpp-style-guide)
 
 # Style Guide
 
