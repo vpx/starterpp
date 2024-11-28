@@ -1,0 +1,23 @@
+name: Report a Documentation Issue
+description: Report a problem with the documentation
+labels: ["documentation"]
+
+body:
+- type: markdown
+  attributes:
+    value: >
+      #### Thank you for helping improve the documentation! Please ensure the issue is not a duplicate.
+
+- type: textarea
+  attributes:
+    label: Issue Description
+    placeholder: |
+      Provide a clear description of the documentation issue, where it occurs, and any relevant links or details.
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: Suggested Fix
+    placeholder: |
+      Suggest improvements or corrections for the documentation.
+
