@@ -1,0 +1,35 @@
+name: Report a Bug
+description: Report a bug or issue
+labels: ["bug"]
+
+body:
+- type: markdown
+  attributes:
+    value: >
+      #### Thank you for reporting! Please ensure the issue is not a duplicate.
+
+- type: textarea
+  attributes:
+    label: Bug Description
+    placeholder: |
+      Provide a clear and concise description of the bug and any relevant error logs. Wrap error logs or code in triple quotes for readability.
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: Steps to Reproduce
+    placeholder: |
+      Describe how to reproduce the bug. Include minimal code examples or attach relevant files if needed.
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: System Information
+    placeholder: |
+      Provide details about your environment, such as OS, version, and tools. For example:
+
+      - **Version:** 1.2.3
+      - **OS:** Linux, Windows, macOS
+      - **Tools:** Python 3.10, GCC 12.2.0
+  validations:
+    required: true
