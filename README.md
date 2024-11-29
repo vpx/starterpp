@@ -4,6 +4,12 @@ A modern, cross-platform C++ template that uses modules, continuous integration,
 
 Note: Manual updates to the contact information in the `SECURITY.md` and `CODE_OF_CONDUCT.md` files are required.
 
+## Cloning The Repository
+
+```bash
+git clone --recurse-submodules https://github.com/ema-mil/cpp-modern-template.git
+```
+
 ## Building
 
 ### Requirements
