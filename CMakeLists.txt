@@ -13,9 +13,17 @@ target_sources(mylibrary
     FILES include/mylibrary.cppm
 )
 
-add_subdirectory(third_party/)
+include(FetchContent)
 
-set(MYLIB_BUILD_TESTS ON)
+FetchContent_Declare(
+  googletest
+  GIT_REPOSITORY https://github.com/google/googletest.git
+  GIT_TAG b514bdc898e2951020cbdca1304b75f5950d1f59 # release-1.15.2
+  FIND_PACKAGE_ARGS NAMES GTest
+)
+
+option(MYLIB_BUILD_TESTS ON)
 if(MYLIB_BUILD_TESTS)
-    add_subdirectory(tests/)
+  FetchContent_MakeAvailable(googletest)
+  add_subdirectory(tests/)
 endif()
