@@ -23,8 +23,8 @@ FetchContent_Declare(
   FIND_PACKAGE_ARGS NAMES GTest
 )
 
-option(MYLIB_BUILD_TESTS ON)
-if(MYLIB_BUILD_TESTS)
+option(MYLIB_BUILD_TESTS "Enable building tests" ON)
+if(MYLIB_BUILD_TESTS MATCHES ON)
   FetchContent_MakeAvailable(googletest)
   add_subdirectory(tests/)
 endif()
