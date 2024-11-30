@@ -3,14 +3,15 @@ cmake_minimum_required(VERSION 3.28)
 project(MyLibrary LANGUAGES CXX VERSION 0.0.1)
 
 add_library(mylibrary STATIC)
+add_library(mylib::mylibrary ALIAS mylibrary)
 target_compile_features(mylibrary PUBLIC cxx_std_20)
 target_sources(mylibrary
     PRIVATE
     ${CMAKE_SOURCE_DIR}/source/mylibrary.cpp
     PUBLIC
     FILE_SET CXX_MODULES
-    BASE_DIRS include
-    FILES include/mylibrary.cppm
+    BASE_DIRS source
+    FILES source/mylibrary.cppm
 )
 
 include(FetchContent)
