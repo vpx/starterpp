@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.28)
 
 project(MyLibrary LANGUAGES CXX VERSION 0.0.1)
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 add_library(mylibrary STATIC)
 add_library(mylib::mylibrary ALIAS mylibrary)
 target_compile_features(mylibrary PUBLIC cxx_std_20)
