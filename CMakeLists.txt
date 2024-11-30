@@ -28,3 +28,32 @@ if(MYLIB_BUILD_TESTS)
   FetchContent_MakeAvailable(googletest)
   add_subdirectory(tests/)
 endif()
+
+include(CMakePackageConfigHelpers)
+include(GNUInstallDirs)
+
+install(
+  TARGETS mylibrary
+  EXPORT mylibrary-targets
+  FILE_SET CXX_MODULES
+  DESTINATION ${CMAKE_INSTALL_LIBDIR}/mylibrary
+)
+
+install(
+  EXPORT mylibrary-targets
+  NAMESPACE mylib::
+  CXX_MODULES_DIRECTORY modules-data
+  DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/mylibrary
+)
+
+write_basic_package_version_file(
+  ${CMAKE_CURRENT_BINARY_DIR}/mylibrary-config-version.cmake
+  COMPATIBILITY SameMajorVersion
+)
+
+install(
+  FILES 
+    ${CMAKE_CURRENT_BINARY_DIR}/mylibrary-config-version.cmake
+    ${CMAKE_SOURCE_DIR}/cmake/mylibrary-config.cmake
+  DESTINATION ${CMAKE_INSTALL_DATADIR}/mylibrary
+)
