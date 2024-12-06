@@ -1,5 +1,3 @@
-[//]: # (source: https://github.com/ema-mil/cpp-style-guide)
-
 # Style Guide
 
 ## Contents
