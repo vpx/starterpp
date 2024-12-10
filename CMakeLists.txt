@@ -26,7 +26,7 @@ FetchContent_Declare(
 )
 
 option(MYLIB_BUILD_TESTS "Enable building tests" ON)
-if(MYLIB_BUILD_TESTS MATCHES ON)
+if(MYLIB_BUILD_TESTS)
   FetchContent_MakeAvailable(googletest)
   add_subdirectory(tests/)
 endif()
@@ -43,8 +43,8 @@ install(
 
 install(
   EXPORT mylibrary-targets
+  FILE mylibrary-config.cmake
   NAMESPACE mylib::
-  CXX_MODULES_DIRECTORY modules-data
   DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/mylibrary
 )
 
@@ -54,8 +54,6 @@ write_basic_package_version_file(
 )
 
 install(
-  FILES 
-    ${CMAKE_CURRENT_BINARY_DIR}/mylibrary-config-version.cmake
-    ${CMAKE_SOURCE_DIR}/cmake/mylibrary-config.cmake
+  FILES ${CMAKE_CURRENT_BINARY_DIR}/mylibrary-config-version.cmake
   DESTINATION ${CMAKE_INSTALL_DATADIR}/mylibrary
 )
