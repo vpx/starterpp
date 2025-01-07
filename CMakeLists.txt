@@ -45,7 +45,7 @@ install(
   EXPORT mylibrary-targets
   FILE mylibrary-config.cmake
   NAMESPACE mylib::
-  DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/mylibrary
+  DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/mylibrary
 )
 
 write_basic_package_version_file(
@@ -55,5 +55,5 @@ write_basic_package_version_file(
 
 install(
   FILES ${CMAKE_CURRENT_BINARY_DIR}/mylibrary-config-version.cmake
-  DESTINATION ${CMAKE_INSTALL_DATADIR}/mylibrary
+  DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/mylibrary
 )
