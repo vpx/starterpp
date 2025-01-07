@@ -17,6 +17,12 @@ target_sources(mylibrary
     FILES source/mylibrary.cppm
 )
 
+target_compile_options(${PROJECT_NAME} PUBLIC
+  $<$<COMPILE_LANG_AND_ID:CXX,Clang,GNU,ARMClang,AppleClang,LLC>:
+    $<BUILD_INTERFACE:-Werror;-Wall;-Wextra;-Wshadow;-Wunused;-pedantic>>
+  $<$<COMPILE_LANG_AND_ID:CXX,MSVC>:$<BUILD_INTERFACE:/W3>>
+)
+
 include(FetchContent)
 
 FetchContent_Declare(
