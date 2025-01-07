@@ -6,11 +6,12 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 add_library(mylibrary STATIC)
 add_library(mylib::mylibrary ALIAS mylibrary)
+
 target_compile_features(mylibrary PUBLIC cxx_std_20)
 target_sources(mylibrary
-    PRIVATE
+  PRIVATE
     ${CMAKE_SOURCE_DIR}/source/mylibrary.cpp
-    PUBLIC
+  PUBLIC
     FILE_SET CXX_MODULES
     BASE_DIRS source
     FILES source/mylibrary.cppm
