@@ -6,14 +6,21 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 add_library(mylibrary STATIC)
 add_library(mylib::mylibrary ALIAS mylibrary)
+
 target_compile_features(mylibrary PUBLIC cxx_std_20)
 target_sources(mylibrary
-    PRIVATE
+  PRIVATE
     ${CMAKE_SOURCE_DIR}/source/mylibrary.cpp
-    PUBLIC
+  PUBLIC
     FILE_SET CXX_MODULES
     BASE_DIRS source
     FILES source/mylibrary.cppm
+)
+
+target_compile_options(mylibrary PUBLIC
+  $<$<COMPILE_LANG_AND_ID:CXX,Clang,GNU,ARMClang,AppleClang,LLC>:
+    $<BUILD_INTERFACE:-Werror;-Wall;-Wextra;-Wshadow;-Wunused;-pedantic>>
+  $<$<COMPILE_LANG_AND_ID:CXX,MSVC>:$<BUILD_INTERFACE:/W3>>
 )
 
 include(FetchContent)
@@ -45,7 +52,7 @@ install(
   EXPORT mylibrary-targets
   FILE mylibrary-config.cmake
   NAMESPACE mylib::
-  DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/mylibrary
+  DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/mylibrary
 )
 
 write_basic_package_version_file(
@@ -55,5 +62,5 @@ write_basic_package_version_file(
 
 install(
   FILES ${CMAKE_CURRENT_BINARY_DIR}/mylibrary-config-version.cmake
-  DESTINATION ${CMAKE_INSTALL_DATADIR}/mylibrary
+  DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/mylibrary
 )
