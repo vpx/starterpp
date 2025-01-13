@@ -64,3 +64,5 @@ install(
   FILES ${CMAKE_CURRENT_BINARY_DIR}/mylibrary-config-version.cmake
   DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/mylibrary
 )
+
+include(CPack)
