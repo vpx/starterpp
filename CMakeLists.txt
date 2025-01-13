@@ -6,22 +6,14 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 add_library(mylibrary STATIC)
 add_library(mylib::mylibrary ALIAS mylibrary)
-
 target_compile_features(mylibrary PUBLIC cxx_std_20)
-target_sources(mylibrary
-  PRIVATE
-    ${CMAKE_SOURCE_DIR}/source/mylibrary.cpp
-  PUBLIC
-    FILE_SET CXX_MODULES
-    BASE_DIRS source
-    FILES source/mylibrary.cppm
-)
-
 target_compile_options(mylibrary PUBLIC
   $<$<COMPILE_LANG_AND_ID:CXX,Clang,GNU,ARMClang,AppleClang,LLC>:
     $<BUILD_INTERFACE:-Werror;-Wall;-Wextra;-Wshadow;-Wunused;-pedantic>>
   $<$<COMPILE_LANG_AND_ID:CXX,MSVC>:$<BUILD_INTERFACE:/W3>>
 )
+
+add_subdirectory(source/)
 
 include(FetchContent)
 
