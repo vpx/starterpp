@@ -1,8 +1,6 @@
-# Modern C++ Template
+# starterpp
 
 A modern, cross-platform C++ template that uses modules, continuous integration, CMake, unit tests, clang-format, clang-tidy, and includes a custom style guide. 
-
-Note: Manual updates to the contact information in the `SECURITY.md` and `CODE_OF_CONDUCT.md` files are required.
 
 ## Building
 
@@ -23,19 +21,19 @@ Compilers which CMake natively supports module dependency scanning include:
 ### Building with Ninja
 
 ```bash
-cmake -G Ninja -B build/ -S . -DCMAKE_BUILD_TYPE=[Debug|Release|RelWithDebInfo|MinSizeRel]
+cmake -G Ninja -B build -DCMAKE_BUILD_TYPE=<Debug|Release|RelWithDebInfo|MinSizeRel>
 ```
 
 ```bash
-cmake --build build/
+cmake --build build
 ```
 
 ### Building with Visual Studio (MSVC)
 
 ```bash
-cmake -G "Visual Studio 17 2022" -B build/ -S .
+cmake -G "Visual Studio 17 2022" -B build
 ```
 
 ```bash
-cmake --build build/ --config [Debug|Release|RelWithDebInfo|MinSizeRel]
+cmake --build build --config <Debug|Release|RelWithDebInfo|MinSizeRel>
 ```
