@@ -1,11 +1,18 @@
 # Contributing
 
-Thank you for your interest in contributing to the project! To contribute, please follow the guidelines below:
+To contribute, please follow the guidelines below:
 
+- Read our [philosophy](#philosophy).
 - Write code that adheres to the [best practices](#best-practices).
 - Follow our [style guide](style_guide.md).
 - Adhere to our [commit convention](commits.md).
 - Respect the [code of conduct](CODE_OF_CONDUCT.md).
+
+## Philosophy
+
+Consistency is our philosophy. Always use a formatting style, always use a specific style, always add documentation, and always document using the same style.
+
+This project already enforces these principles, please follow them to maintain consistency.
 
 ## Best Practices
 
