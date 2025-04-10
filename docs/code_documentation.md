@@ -97,6 +97,38 @@ Good
 float area(float length, float width);
 ```
 
+### Dot
+
+End all descriptions with a dot.
+
+Good
+
+```cpp
+/**
+ * @brief Calculates the area of a rectangle.
+ *
+ * @param length The longer side measurement.
+ * @param width The shorter side measurement.
+ * @return Product of length and width.
+ * @throws std::runtime_exception when the length and width are equal.
+ */
+float area(float length, float width);
+```
+
+Bad
+
+```cpp
+/**
+ * @brief Calculates the area of a rectangle
+ *
+ * @param length The longer side measurement
+ * @param width The shorter side measurement
+ * @return Product of length and width
+ * @throws std::runtime_exception when the length and width are equal
+ */
+float area(float length, float width);
+```
+
 ## Examples
 
 ### Functions
