@@ -6,6 +6,7 @@ To contribute, please follow the guidelines below:
 - Write code that adheres to the [best practices](#best-practices).
 - Follow our [style guide](style_guide.md).
 - Adhere to our [commit convention](commits.md).
+- Write code documentation that adhere to the [best practices](#code_documentation.md).
 - Respect the [code of conduct](CODE_OF_CONDUCT.md).
 
 ## Philosophy
