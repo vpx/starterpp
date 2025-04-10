@@ -7,7 +7,6 @@ Always document:
  - Global variables
  - Macros
  - Classes & Structs
- - Namespaces
  - Concepts
  - Using directives
 
@@ -127,16 +126,6 @@ struct vec3
     type_t y;
     type_t z;
 };
-```
-
-### Namespaces
-
-```cpp
-/**
- * @brief Short alias for the boost filesystem namespace.
- * @see https://www.boost.org/doc/libs/1_82_0/libs/filesystem/doc/index.htm
- */
-namespace fs = boost::filesystem;
 ```
 
 ### Concepts
