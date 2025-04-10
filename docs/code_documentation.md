@@ -16,9 +16,9 @@ Always document:
 
 ```cpp
 /**
- * @TAG Lorem Ipsum
- * @TAG Lorem Ipsum
- * @TAG Lorem Ipsum
+ * @TAG <An optional attribute> Description
+ * @TAG <An option attribute> Description
+ * @TAG <An optional attribute> Description
  */
 ```
 
@@ -57,11 +57,11 @@ Bad
 
 ```cpp
 /**
- * @brief Calculates the area of a rectangle
- * @param length The longer side measurement
- * @param width The shorter side measurement
- * @return Product of length and width
- * @throws std::runtime_exception when the length and width are equal
+ * @brief Calculates the area of a rectangle.
+ * @param length The longer side measurement.
+ * @param width The shorter side measurement.
+ * @return Product of length and width.
+ * @throws std::runtime_exception when the length and width are equal.
  */
 float area(float length, float width);
 ```
@@ -70,15 +70,15 @@ Bad
 
 ```cpp
 /**
- * @brief Calculates the area of a rectangle
+ * @brief Calculates the area of a rectangle.
  *
- * @param length The longer side measurement
+ * @param length The longer side measurement.
  *
- * @param width The shorter side measurement
+ * @param width The shorter side measurement.
  *
- * @return Product of length and width
+ * @return Product of length and width.
  *
- * @throws std::runtime_exception when the length and width are equal
+ * @throws std::runtime_exception when the length and width are equal.
  */
 float area(float length, float width);
 ```
@@ -87,12 +87,12 @@ Good
 
 ```cpp
 /**
- * @brief Calculates the area of a rectangle
+ * @brief Calculates the area of a rectangle.
  *
- * @param length The longer side measurement
- * @param width The shorter side measurement
- * @return Product of length and width
- * @throws std::runtime_exception when the length and width are equal
+ * @param length The longer side measurement.
+ * @param width The shorter side measurement.
+ * @return Product of length and width.
+ * @throws std::runtime_exception when the length and width are equal.
  */
 float area(float length, float width);
 ```
