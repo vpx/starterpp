@@ -2,15 +2,12 @@
 
 To contribute, please follow the guidelines below:
 
-- Write code that adheres to the [best practices](#best-practices).
-- Follow our [style guide](style_guide.md).
+- Follow the [style guide](style_guide.md).
+- Follow the [documentation guidelines](doxygen.md).
 - Adhere to our [commit convention](commits.md).
-- Write code documentation that adhere to the [best practices](#doxygen.md).
+- Write code that adheres to the [best practices](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines).
+- Consider using clang-tidy.
 - Respect the [code of conduct](CODE_OF_CONDUCT.md).
-
-## Best Practices
-
-A great resource for learning best practices is the [C++ Core Guidelines](). We recommend using **clang-tidy** along with our [.clang-tidy](../.clang-tidy) configuration file to ensure compliance with the best practices defined for our project.
 
 ## Reporting a Bug
 
