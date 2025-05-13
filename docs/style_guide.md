@@ -536,8 +536,9 @@ Use the following formatting.
  */
 ```
 
-Good:
 ```cpp
+// Good:
+
 /**
  * @brief Calculates the area of a rectangle.
  *
@@ -547,10 +548,9 @@ Good:
  * @throws std::runtime_exception when the length and width are equal.
  */
 float area(float length, float width);
-```
 
-Bad:
-```cpp
+// Bad:
+
 /**
  * Calculates the area of a rectangle.
  *
@@ -560,10 +560,9 @@ Bad:
  * width The shorter side measurement.
  */
 float area(float length, float width);
-```
 
-Bad:
-```cpp
+// Bad:
+
 // @brief Calculates the area of a rectangle.
 // @throws std::runtime_exception when the length and width are equal.
 // @param length The longer side measurement.
@@ -587,19 +586,6 @@ Use `@throws` to describe what the function throws.
 Use `@warning` to warn about correct usage that otherwise might cause a bug.
 
 Use `@see` to reference an external information that is part of this code.
-
-Good:
-```cpp
-/**
- * @brief Calculates the area of a rectangle.
- *
- * @param length The longer side measurement.
- * @param width The shorter side measurement.
- * @return Product of length and width.
- * @throws std::runtime_exception when the length and width are equal.
- */
-float area(float length, float width);
-```
 
 ### Order
 
