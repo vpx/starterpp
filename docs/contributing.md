@@ -2,8 +2,7 @@
 
 To contribute, please follow the guidelines below:
 
-- Follow the [style guide](style_guide.md).
-- Follow the [documentation guidelines](doxygen.md).
+- Follow the project [style guide](style_guide.md).
 - Adhere to our [commit convention](commits.md).
 - Write code that adheres to the [best practices](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines).
 - Consider using clang-tidy.

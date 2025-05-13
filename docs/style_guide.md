@@ -17,6 +17,13 @@
   - [Case](#case)
   - [Prefix](#prefix)
   - [Suffix](#suffix)
+- [Documenting](#documenting)
+  - [Formatting](#documentation-formatting)
+  - [Tags](#tags)
+  - [Order](#order)
+  - [Spaces](#tags-spaces)
+  - [Dot](#dot)
+  - [Always Document](#always-document)
 
 ## Formatting
 
@@ -514,3 +521,267 @@ void foo(const data_t& data)
 
 }
 ```
+
+## Documenting
+
+### Documentation Formatting
+
+Use the following formatting.
+
+```cpp
+/**
+ * @tag <An optional attribute> Description
+ * @tag <An option attribute> Description
+ * @tag <An optional attribute> Description
+ */
+```
+
+Good:
+```cpp
+/**
+ * @brief Calculates the area of a rectangle.
+ *
+ * @param length The longer side measurement.
+ * @param width The shorter side measurement.
+ * @return Product of length and width.
+ * @throws std::runtime_exception when the length and width are equal.
+ */
+float area(float length, float width);
+```
+
+Bad:
+```cpp
+/**
+ * Calculates the area of a rectangle.
+ *
+ * std::runtime_exception when the length and width are equal.
+ * length The longer side measurement.
+ * Product of length and width.
+ * width The shorter side measurement.
+ */
+float area(float length, float width);
+```
+
+Bad:
+```cpp
+// @brief Calculates the area of a rectangle.
+// @throws std::runtime_exception when the length and width are equal.
+// @param length The longer side measurement.
+// @return Product of length and width.
+// @param width The shorter side measurement.
+float area(float length, float width);
+```
+
+### Tags
+
+Use `@brief` to give a general short description.
+
+Use `@tparam` to give a short description about a template parameter.
+
+Use `@param` to give a short description about that specific parameter.
+
+Use `@return` to give a short description about the function return type.
+
+Use `@throws` to describe what the function throws.
+
+Use `@warning` to warn about correct usage that otherwise might cause a bug.
+
+Use `@see` to reference an external information that is part of this code.
+
+Good:
+```cpp
+/**
+ * @brief Calculates the area of a rectangle.
+ *
+ * @param length The longer side measurement.
+ * @param width The shorter side measurement.
+ * @return Product of length and width.
+ * @throws std::runtime_exception when the length and width are equal.
+ */
+float area(float length, float width);
+```
+
+### Order
+
+Put tags in the following order:
+ 1. `@brief`
+ 2. `@tparam`
+ 3. `@param`
+ 4. `@return`
+ 5. `@throws`
+ 6. `@warning`
+ 7. `@see`
+
+```cpp
+// Good:
+
+/**
+ * @brief Calculates the area of a rectangle.
+ *
+ * @param length The longer side measurement.
+ * @param width The shorter side measurement.
+ * @return Product of length and width.
+ * @throws std::runtime_exception when the length and width are equal.
+ */
+float area(float length, float width);
+
+// Bad:
+
+/**
+ * @brief Calculates the area of a rectangle.
+ *
+ * @throws std::runtime_exception when the length and width are equal.
+ * @param length The longer side measurement.
+ * @return Product of length and width.
+ * @param width The shorter side measurement.
+ */
+float area(float length, float width);
+```
+
+### Tags Spaces
+
+Put empty lines between `@brief` and any other tags. All other tags should not have a empty line between them.
+
+```cpp
+// Bad:
+
+/**
+ * @brief Calculates the area of a rectangle.
+ * @param length The longer side measurement.
+ * @param width The shorter side measurement.
+ * @return Product of length and width.
+ * @throws std::runtime_exception when the length and width are equal.
+ */
+float area(float length, float width);
+
+// Bad:
+
+/**
+ * @brief Calculates the area of a rectangle.
+ *
+ * @param length The longer side measurement.
+ *
+ * @param width The shorter side measurement.
+ *
+ * @return Product of length and width.
+ *
+ * @throws std::runtime_exception when the length and width are equal.
+ */
+float area(float length, float width);
+
+// Good:
+
+/**
+ * @brief Calculates the area of a rectangle.
+ *
+ * @param length The longer side measurement.
+ * @param width The shorter side measurement.
+ * @return Product of length and width.
+ * @throws std::runtime_exception when the length and width are equal.
+ */
+float area(float length, float width);
+```
+
+### Dot
+
+End all descriptions with a dot.
+
+```cpp
+// Good:
+
+/**
+ * @brief Calculates the area of a rectangle.
+ *
+ * @param length The longer side measurement.
+ * @param width The shorter side measurement.
+ * @return Product of length and width.
+ * @throws std::runtime_exception when the length and width are equal.
+ */
+float area(float length, float width);
+
+// Bad:
+
+/**
+ * @brief Calculates the area of a rectangle
+ *
+ * @param length The longer side measurement
+ * @param width The shorter side measurement
+ * @return Product of length and width
+ * @throws std::runtime_exception when the length and width are equal
+ */
+float area(float length, float width);
+```
+
+### Always document
+
+ - Functions
+ - Macros
+ - Classes
+ - Structs
+ - Concepts
+
+```cpp
+// Function example:
+
+/**
+ * @brief Adds two integers.
+ *
+ * @param a The first integer to add.
+ * @param b The second integer to add.
+ * @return The sum of a and b.
+ * @throws std::invalid_argument if either parameter is negative.
+ * @see subtract() for the inverse operation.
+ */
+int add(int a, int b)
+{
+    if (a < 0 || b < 0)
+    {
+        throw std::invalid_argument("Negative values not allowed");
+    }
+
+    return a + b;
+}
+
+// Macro example:
+
+/**
+ * @brief Computes the absolute value of a number.
+ *
+ * @param x The input value (integer or floating point).
+ * @warning Avoid using with expressions that have side effects (e.g., `ABS(x++)`).
+ */
+#define ABS(x) ((x) < 0 ? -(x) : (x))
+
+// Struct example:
+
+/**
+ * @brief Represents a 3D vector with x, y, z components.
+ *
+ * @tparam type_t Precision type (e.g., float, double).
+ */
+template<typename type_t>
+struct vec3
+{
+    type_t x;
+    type_t y;
+    type_t z;
+};
+
+// Concept example:
+
+/**
+ * @brief Constraint for types supporting arithmetic operations.
+ *
+ * @tparam type_t The type to check.
+ */
+template<typename type_t>
+concept arithmetic = std::is_arithmetic_v<type_t>;
+
+// Using directive example:
+
+/**
+ * @brief A vector of type float.
+ */
+using my_vector = std::vector<float>;
+```
+
