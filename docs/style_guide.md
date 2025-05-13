@@ -17,7 +17,6 @@
   - [Case](#case)
   - [Prefix](#prefix)
   - [Suffix](#suffix)
-- [Best Practices](#best-practices)
 
 ## Formatting
 
@@ -515,11 +514,3 @@ void foo(const data_t& data)
 
 }
 ```
-
-## Best Practices
-
-Recommended best practices:
-
-[Jason Turner Best Practices](https://github.com/cpp-best-practices/cppbestpractices)
-
-[C++ Core Guidelines](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines)
