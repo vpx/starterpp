@@ -13,7 +13,7 @@ target_compile_options(mylibrary PUBLIC
   $<$<COMPILE_LANG_AND_ID:CXX,MSVC>:$<BUILD_INTERFACE:/W3>>
 )
 
-add_subdirectory(source/)
+add_subdirectory(src/)
 
 include(FetchContent)
 
