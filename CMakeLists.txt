@@ -19,7 +19,7 @@ include(FetchContent)
 
 option(MYLIB_BUILD_TESTS "Enable building tests" ON)
 if(MYLIB_BUILD_TESTS)
-  add_subdirectory(tests/)
+  add_subdirectory(test/)
 endif()
 
 include(CMakePackageConfigHelpers)
