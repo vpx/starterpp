@@ -1,7 +1,3 @@
-# resources:
-# - https://clang.llvm.org/docs/ClangFormat.html
-# - https://clang.llvm.org/docs/ClangFormatStyleOptions.html
-
 ---
 Language: Cpp
 AccessModifierOffset: -4
