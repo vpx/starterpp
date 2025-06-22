@@ -587,7 +587,7 @@ float area(float length, float width);
 
 ### Tags Spaces
 
-Put empty lines between `@brief` and any other tags. All other tags should not have a empty line between them.
+Put empty lines between `@brief` and other tags. All other tags should not have a empty line between them.
 
 ```cpp
 // Bad:
