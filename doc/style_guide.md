@@ -22,7 +22,7 @@
   - [Order](#order)
   - [Spaces](#tags-spaces)
   - [Dot](#dot)
-  - [Always Document](#always-document)
+  - [Examples](#examples)
 
 ## Formatting
 
@@ -659,13 +659,7 @@ float area(float length, float width);
 float area(float length, float width);
 ```
 
-### Always document
-
- - Functions
- - Macros
- - Classes
- - Structs
- - Concepts
+### Examples
 
 ```cpp
 // Function example:
