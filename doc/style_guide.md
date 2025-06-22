@@ -319,7 +319,8 @@ concept my_concept = requires(data_t value)
     { value + 1 } -> std::same_as<int>;
 };
 
-void empty_function() {} // Bad
+// Bad
+void empty_function() {}
 
 // Good
 void empty_function()
