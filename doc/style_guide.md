@@ -55,7 +55,8 @@ void foo() {
 If the code inside round brackets doesn't fit in a line, break each argument/parameter onto a new line and break the closing bracket.
 
 ```cpp
-void function_one( // Doesn't fit in a line, break
+// Doesn't fit in a line, break
+void function_one(
     unsigned int value_one,
     unsigned int value_two,
     unsigned int value_three
@@ -63,7 +64,8 @@ void function_one( // Doesn't fit in a line, break
 {
 }
 
-void function_two(unsigned int value) // Fits in a line, don't break
+// Fits in a line, don't break
+void function_two(unsigned int value)
 {
 }
 
@@ -73,7 +75,8 @@ int main()
     const unsigned int very_long_variable_name2 = 2;
     const unsigned int very_long_variable_name3 = 3;
 
-    function_one( // Doesn't fit in a line, break
+    // Doesn't fit in a line, break
+    function_one(
         very_long_variable_name1,
         very_long_variable_name2,
         very_long_variable_name3
@@ -81,7 +84,8 @@ int main()
 
     const unsigned int value = 10;
 
-    function_two(value); // Fits in a line, don't break
+    // Fits in a line, don't break
+    function_two(value);
 }
 ```
 
@@ -182,14 +186,12 @@ int main()
     int my_variable1;
 
     int my_variable2;
-    // ...
 
     // Bad
     int my_variable3;
 
 
     int my_variable4;
-    // ...
 }
 ```
 
@@ -234,26 +236,20 @@ Don't indent `public`, `protected`, and `private` keywords.
 class foo
 {
 public:
-    // Code...
 
 protected:
-    // Code...
 
 private:
-    // Code...
 };
 
 // Bad
 class foo
 {
     public:
-        // Code...
 
     protected:
-        // Code...
 
     private:
-        // Code...
 };
 ```
 
@@ -268,10 +264,8 @@ int main()
     switch (random_variable)
     {
     case 1:
-        // Code...
         break;
     default:
-        // Code...
         break;
     }
 
@@ -279,10 +273,8 @@ int main()
     switch (random_variable)
     {
         case 1:
-            // Code...
             break;
         default:
-            // Code...
             break;
     }
 }
@@ -394,32 +386,34 @@ int main()
 Use `underscore_style` everywhere except for macros.
 
 ```cpp
-class random_name // Good
+// Good
+struct random_struct
 {
 };
 
-class RandomName // Bad
+// Bad
+class RandomStruct
 {
 };
 
 int main()
 {
-    int myVariable; // Bad
+    // Bad
+    int myVariable;
 
-    int my_variable; // Good
-
-    random_name myObject; // Bad
-
-    random_name my_object; // Good
+    // Good
+    int my_variable;
 }
 ```
 
 For macros, use `UPPER_CASE`.
 
 ```cpp
-#define my_macro // Bad
+// Bad
+#define my_macro
 
-#define MY_MACRO // Good
+// Good
+#define MY_MACRO
 ```
 
 ### Prefix
@@ -430,19 +424,25 @@ Put `m_` as a prefix in all non-public member variables.
 class foo
 {
 public:
-    int member_variable; // Good, no need to put m_ since it is public
+    // Good
+    int public_variable;
 
-    int m_member_variable; // Bad, the variable is public
+    // Bad
+    int m_public_variable;
 
 private:
-    int m_member_variable; // Good, the variable is private; m_ is needed 
+    // Good
+    int m_private_variable;
 
-    int member_variable; // Bad, the variable needs m_ since it's private
+    // Bad
+    int private_variable;
 
 protected:
-    int m_member_variable; // Good, the variable is protected; m_ is needed 
+    // Good
+    int m_protected_variable;
 
-    int member_variable; // Bad, the variable needs m_ since it's protected
+    // Bad
+    int protected_variable;
 };
 ```
 
@@ -456,23 +456,27 @@ Defined types are types defined with:
 - `typedef` keyword.
 
 ```cpp
-using custom_type = std::int16_t; // Bad, didn't add _t suffix
+// Bad
+using custom_type = std::int16_t;
 
-using custom_type_t = std::int16_t; // Good, added _t suffix
+// Good
+using custom_type_t = std::int16_t;
 
-typedef std::int16_t custom_type; // Bad, didn't add _t suffix
+// Bad
+typedef std::int16_t custom_type;
 
-typedef std::int16_t custom_type_t; // Good, added _t suffix
+// Good
+typedef std::int16_t custom_type_t;
 
-template<typename T> // Bad, didn't add _t suffix
-
-
+// Bad
+template<typename T>
 void foo(const T& data)
 {
 
 }
 
-template<typename data_t> // Good, added _t suffix
+// Good
+template<typename data_t>
 void foo(const data_t& data)
 {
 
