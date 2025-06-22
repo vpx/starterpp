@@ -6,7 +6,6 @@
   - [Alignment](#alignment)
   - [Brackets](#brackets)
   - [Characters Per Line](#characters-per-line)
-  - [Const](#const)
   - [Empty Lines](#empty-lines)
   - [Indentation](#indentation)
   - [Namespaces](#namespaces)
@@ -169,49 +168,6 @@ int main()
     int result = very_long_variable_name1 
                + very_long_variable_name2 
                + very_long_variable_name3;
-}
-```
-
-### Const
-
-Use `const` when possible, except for:
-- Member variables
-- Copy parameters
-- Copy return types
-
-```cpp
-class foo
-{
-public:
-    std::vector<int> ex_ret_type() // Good
-    {
-    }
-
-    const std::vector<int> ex_ret_type() // Bad
-    {
-    }
-
-    void ex_parameter(std::vector<int> list) // Good
-    {
-    }
-
-    void ex_parameter(const std::vector<int> list) // Bad
-    {
-    }
-
-private:
-    std::vector<int> m_list; // Good
-
-    const std::vector<int> m_list; // Bad
-};
-
-int main()
-{
-    // Good
-    const int variable1 = 3;
-
-    // Bad
-    int variable2 = 6;
 }
 ```
 
