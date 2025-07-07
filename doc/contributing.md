@@ -6,7 +6,6 @@ To contribute, please follow the guidelines below:
 - Adhere to our [commit convention](commits.md).
 - Write code that adheres to the [best practices](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines).
 - Consider using clang-tidy.
-- Respect the [code of conduct](code_of_conduct.md).
 
 ## Reporting a Bug
 
