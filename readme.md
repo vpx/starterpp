@@ -1,6 +1,6 @@
 # starterpp
 
-A modern, cross-platform C++ template that uses modules, continuous integration, CMake, unit tests, clang-format, clang-tidy, and includes a custom style guide. 
+A modern, cross-platform C++ executable template with continuous integration, CMake, unit tests, clang-format, clang-tidy, and includes a custom style guide. 
 
 ## Building
 
