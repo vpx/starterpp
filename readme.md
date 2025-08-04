@@ -4,22 +4,19 @@ A modern, cross-platform C++ executable template with continuous integration, CM
 
 ## Building
 
-### Building with Ninja
+### Single-Configuration Generators
 
-```bash
-cmake -G Ninja -B build -DCMAKE_BUILD_TYPE=<Debug|Release|RelWithDebInfo|MinSizeRel>
-```
+Single-configuration generators like Unix Makefiles and Ninja:
 
-```bash
-cmake --build build
-```
+```cmake -B build --DCMAKE_BUILD_TYPE=<Debug|Release|RelWithDebInfo|MinSizeRel>```
 
-### Building with Visual Studio (MSVC)
+```cmake --build build```
 
-```bash
-cmake -G "Visual Studio 17 2022" -B build
-```
+### Multi-Configuration Generators
 
-```bash
-cmake --build build --config <Debug|Release|RelWithDebInfo|MinSizeRel>
-```
+Multi-configuration generators like Visual Studio, XCode and Ninja Multi-Config:
+
+```cmake -B build```
+
+```cmake --build build --config <Debug|Release|RelWithDebInfo|MinSizeRel>```
+
