@@ -27,8 +27,8 @@ include(GNUInstallDirs)
 
 install(
     TARGETS starterpp
-    RUNTIME
-    DESTINATION ${CMAKE_INSTALL_BINDIR}
+    EXPORT starterpp-targets
+    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
 
 install(
