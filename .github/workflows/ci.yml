@@ -29,3 +29,30 @@ jobs:
         run: cmake --build build --parallel --config Debug
       - name: Test
         run: ctest --test-dir build/test --output-on-failure
+  clang-sanitizer:
+    name: ${{ matrix.name }}
+    strategy:
+      matrix:
+        include:
+          - name: address-and-undefined-sanitizer
+            flags: "-fsanitize=address,undefined"
+          - name: leak-sanitizer
+            flags: "-fsanitize=leak"
+          - name: thread-sanitizer
+            flags: "-fsanitize=thread -O1"
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - name: Configure
+        run: |
+          cmake -B build -DCMAKE_BUILD_TYPE=Debug \
+          -DCMAKE_C_COMPILER=clang \
+          -DCMAKE_CXX_COMPILER=clang++ \
+          -DCMAKE_CXX_FLAGS="${{ matrix.flags }}" \
+          -DCMAKE_EXE_LINKER_FLAGS="${{ matrix.flags }}"
+      - name: Build
+        run: cmake --build build --parallel
+      - name: Test
+        run: ctest --test-dir build/test --output-on-failure
