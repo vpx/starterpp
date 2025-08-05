@@ -8,10 +8,10 @@ add_executable(starterpp)
 add_executable(spp::starterpp ALIAS starterpp)
 target_compile_features(starterpp PRIVATE cxx_std_23)
 target_compile_options(starterpp PRIVATE
-  $<$<CXX_COMPILER_ID:GNU,Clang>:-Wall;-Wextra;-Wshadow;-Walloca;-Wcast-align;-Wcast-function-type;-Wcast-qual;-Wconversion;-Wctad-maybe-unsupported;-Wdeprecated;-Wnull-dereference;-Wunreachable-code;-Wnon-virtual-dtor;-Wold-style-cast;-Wpedantic;>
-  $<$<CXX_COMPILER_ID:Clang>:-Warray-bounds-pointer-arithmetic;-Wassign-enum;-Watomic-implicit-seq-cst;-Wbad-function-cast;-Wbind-to-temporary-copy;-Wbitwise-op-parentheses;-Wcompound-token-split-by-space;-Wconditional-uninitialized;-Wdelimited-escape-sequence-extension;-Wduplicate-enum;-Wduplicate-method-arg;-Wmost;>
-  $<$<CXX_COMPILER_ID:GNU>:-Wmisleading-indentation;-Wduplicated-cond;-Wduplicated-branches;-Wlogical-op;-Wuseless-cast;>
-  $<$<CXX_COMPILER_ID:MSVC>:/W4;/permissive;/w14640;/w14242;/w14254;/w14263;/w14265;/w14287;/we4289;/w14296;/w14311;/w14545;/w14546;/w14547;/w14549;/w14555;/w14619;/w14640;/w14826;/w14905;/w14906;/w14928;>
+    $<$<CXX_COMPILER_ID:GNU,Clang>:-Wall;-Wextra;-Wshadow;-Walloca;-Wcast-align;-Wcast-function-type;-Wcast-qual;-Wconversion;-Wctad-maybe-unsupported;-Wdeprecated;-Wnull-dereference;-Wunreachable-code;-Wnon-virtual-dtor;-Wold-style-cast;-Wpedantic;>
+    $<$<CXX_COMPILER_ID:Clang>:-Warray-bounds-pointer-arithmetic;-Wassign-enum;-Watomic-implicit-seq-cst;-Wbad-function-cast;-Wbind-to-temporary-copy;-Wbitwise-op-parentheses;-Wcompound-token-split-by-space;-Wconditional-uninitialized;-Wdelimited-escape-sequence-extension;-Wduplicate-enum;-Wduplicate-method-arg;-Wmost;>
+    $<$<CXX_COMPILER_ID:GNU>:-Wmisleading-indentation;-Wduplicated-cond;-Wduplicated-branches;-Wlogical-op;-Wuseless-cast;>
+    $<$<CXX_COMPILER_ID:MSVC>:/W4;/permissive;/w14640;/w14242;/w14254;/w14263;/w14265;/w14287;/we4289;/w14296;/w14311;/w14545;/w14546;/w14547;/w14549;/w14555;/w14619;/w14640;/w14826;/w14905;/w14906;/w14928;>
 )
 
 add_subdirectory(src/)
@@ -20,7 +20,7 @@ include(FetchContent)
 
 option(STARTERPP_BUILD_TESTS "Enable building tests" ON)
 if(STARTERPP_BUILD_TESTS)
-  add_subdirectory(test/)
+    add_subdirectory(test/)
 endif()
 
 include(CMakePackageConfigHelpers)
@@ -33,20 +33,20 @@ install(
 )
 
 install(
-  EXPORT starterpp-targets
-  FILE starterpp-config.cmake
-  NAMESPACE spp::
-  DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/starterpp
+    EXPORT starterpp-targets
+    FILE starterpp-config.cmake
+    NAMESPACE spp::
+    DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/starterpp
 )
 
 write_basic_package_version_file(
-  ${CMAKE_CURRENT_BINARY_DIR}/starterpp-config-version.cmake
-  COMPATIBILITY SameMajorVersion
+    ${CMAKE_CURRENT_BINARY_DIR}/starterpp-config-version.cmake
+    COMPATIBILITY SameMajorVersion
 )
 
 install(
-  FILES ${CMAKE_CURRENT_BINARY_DIR}/starterpp-config-version.cmake
-  DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/starterpp
+    FILES ${CMAKE_CURRENT_BINARY_DIR}/starterpp-config-version.cmake
+    DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/starterpp
 )
 
 include(CPack)
