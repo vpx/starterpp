@@ -28,7 +28,7 @@ jobs:
       - name: Build
         run: cmake --build build --parallel --config Debug --verbose
       - name: Test
-        run: ctest --test-dir build/test --output-on-failure
+        run: ctest --test-dir build/test --output-on-failure -V
   clang-sanitizer:
     name: ${{ matrix.name }}
     strategy:
@@ -57,7 +57,7 @@ jobs:
       - name: Build
         run: cmake --build build --parallel --verbose
       - name: Test
-        run: ctest --test-dir build/test --output-on-failure
+        run: ctest --test-dir build/test --output-on-failure -V
   clang-tidy:
     runs-on: ubuntu-24.04
     timeout-minutes: 45
