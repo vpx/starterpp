@@ -26,7 +26,7 @@ jobs:
       - name: Configure
         run: cmake -B build -DCMAKE_BUILD_TYPE=Debug
       - name: Build
-        run: cmake --build build --parallel --config Debug
+        run: cmake --build build --parallel --config Debug --verbose
       - name: Test
         run: ctest --test-dir build/test --output-on-failure
   clang-sanitizer:
