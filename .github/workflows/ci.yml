@@ -58,3 +58,15 @@ jobs:
         run: cmake --build build --parallel --verbose
       - name: Test
         run: ctest --test-dir build/test --output-on-failure
+  clang-tidy:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - name: Log c++ --version
+        run: c++ --version
+      - name: Configure
+        run: cmake -B build -DCMAKE_BUILD_TYPE=Debug -DSTARTERPP_CLANG_TIDY=ON
+      - name: Build
+        run: cmake --build build --verbose
