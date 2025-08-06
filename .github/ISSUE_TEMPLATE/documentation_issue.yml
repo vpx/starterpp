@@ -15,9 +15,3 @@ body:
       Provide a clear description of the documentation issue, where it occurs, and any relevant links or details.
   validations:
     required: true
-- type: textarea
-  attributes:
-    label: Suggested Fix
-    placeholder: |
-      Suggest improvements or corrections for the documentation.
-
