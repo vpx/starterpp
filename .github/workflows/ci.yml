@@ -40,6 +40,8 @@ jobs:
             flags: "-fsanitize=leak"
           - name: thread-sanitizer
             flags: "-fsanitize=thread -O1"
+          - name: memory-sanitizer
+            flags: "-fsanitize=memory -fno-optimize-sibling-calls -O1"
     runs-on: ubuntu-24.04
     timeout-minutes: 120
     steps:
