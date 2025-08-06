@@ -15,9 +15,3 @@ body:
       Clearly describe the feature and its purpose. Include the motivation behind it.
   validations:
     required: true
-- type: textarea
-  attributes:
-    label: Additional Details
-    description: |
-      Add any extra details, such as examples, pseudo code, diagrams, or screenshots, to help explain the feature.
-
