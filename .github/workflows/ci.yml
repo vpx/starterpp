@@ -33,7 +33,10 @@ jobs:
             os: ubuntu-24.04
             timeout-minutes: 60
             packages: valgrind
-            configure: -DSTARTERPP_CLANG_TIDY=ON
+            configure: >
+              -DCMAKE_C_COMPILER=clang
+              -DCMAKE_CXX_COMPILER=clang++
+              -DSTARTERPP_CLANG_TIDY=ON
             test: '-LE "no-valgrind" -T memcheck'
           - name: address-and-undefined-sanitizer
             os: ubuntu-24.04
