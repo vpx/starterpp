@@ -25,6 +25,7 @@ include(FetchContent)
 
 option(STARTERPP_BUILD_TESTS "Enable building tests" ON)
 if(STARTERPP_BUILD_TESTS)
+    include(CTest)
     add_subdirectory(test/)
 endif()
 

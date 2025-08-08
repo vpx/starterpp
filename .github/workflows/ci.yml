@@ -105,4 +105,4 @@ jobs:
         run: cmake --build build --config Debug --verbose ${{ matrix.build || '' }}
       - name: Test
         if: ${{ matrix.skip_test != true && matrix.skip_build != true }}
-        run: ctest --test-dir build/test --output-on-failure -V ${{ matrix.test || '' }}
+        run: ctest --test-dir build/ --output-on-failure -V ${{ matrix.test || '' }}

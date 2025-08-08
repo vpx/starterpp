@@ -22,9 +22,6 @@
 #
 # set_property(TEST my_test_name LABELS "no-valgrind")
 
-enable_testing()
-include(CTest)
-
 set(MEMORYCHECK_COMMAND valgrind)
 set(MEMORYCHECK_COMMAND_OPTIONS
     "--leak-check=full"
