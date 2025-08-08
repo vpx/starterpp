@@ -78,6 +78,15 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
       - name: Log c++ --version
         run: c++ --version
+      - name: Run cache on packages
+        if: ${{ matrix.packages }}
+        uses: actions/cache@v4
+        with:
+          path: |
+            /var/cache/apt/archives       # Linux (apt)
+            ~/Library/Caches/Homebrew     # macOS (Homebrew)
+            C:\ProgramData\chocolatey\lib # Windows (Chocolatey):
+          key: packages-${{ runner.os }}-${{ matrix.packages }}
       - name: Install packages
         if: ${{ matrix.packages }}
         shell: bash
