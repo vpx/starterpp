@@ -69,7 +69,7 @@ jobs:
               -DCMAKE_CXX_FLAGS="-fsanitize=memory -fno-optimize-sibling-calls -O1" 
               -DCMAKE_EXE_LINKER_FLAGS="-fsanitize=memory" 
             build: --parallel
-            test: '-L "msan"'
+            test: '-LE "no-msan"'
     runs-on: ${{ matrix.os }}
     timeout-minutes: ${{ matrix.timeout-minutes || 30 }}
     steps:
