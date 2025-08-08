@@ -8,7 +8,7 @@
 # To exclude tests that depend on uninstrumented system libraries from running
 # with MemorySanitizer, add the "no-msan" label to their test properties:
 #
-# set_property(TEST my_test_name LABELS "no-msan")
+# set_property(NAME my_test_name LABELS "no-msan")
 #
 # - Valgrind false positives
 #
@@ -20,7 +20,7 @@
 # If false positives persist despite suppressions, you can disable Valgrind on
 # specific tests by adding the "no-valgrind" label to their test properties:
 #
-# set_property(TEST my_test_name LABELS "no-valgrind")
+# set_property(NAME my_test_name LABELS "no-valgrind")
 
 set(MEMORYCHECK_COMMAND valgrind)
 set(MEMORYCHECK_COMMAND_OPTIONS
