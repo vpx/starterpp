@@ -17,10 +17,6 @@ jobs:
     strategy:
       matrix:
         include:
-          - name: build-and-test-ubuntu
-            os: ubuntu-24.04
-            timeout-minutes: 30
-            build: --parallel
           - name: build-and-test-macos
             os: macos-14
             timeout-minutes: 30
