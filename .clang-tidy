@@ -2,7 +2,7 @@
 FormatStyle: 'file'
 SystemHeaders: false
 WarningsAsErrors: '*'
-HeaderFilterRegex: '.*'
+HeaderFilterRegex: '^(?!(?:build|third_party|vendor|deps|extern)\/).*'
 HeaderFileExtensions:
   - ''
   - h
