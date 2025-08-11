@@ -68,7 +68,7 @@ Checks: >
   -cert-dcl58-cpp
 CheckOptions:
   cppcoreguidelines-pro-type-const-cast.StrictMode: true
-  misc-include-cleaner.IgnoreHeaders: '^.*(?:pch|stdafx)\.h\w*$'
+  misc-include-cleaner.IgnoreHeaders: '.*/(pch|stdafx)\.h(pp)?$'
   modernize-use-default-member-init.UseAssignment: true
   performance-for-range-copy.WarnOnAllAutoCopies: true
   readability-identifier-naming.AbstractClassCase: 'lower_case'
