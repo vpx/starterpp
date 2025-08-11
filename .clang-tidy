@@ -1,7 +1,7 @@
 ---
 FormatStyle: 'file'
 SystemHeaders: false
-WarningsAsErrors: 'readability-identifier-naming'
+WarningsAsErrors: '*'
 HeaderFilterRegex: '.*'
 HeaderFileExtensions:
   - ''
