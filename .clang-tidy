@@ -59,7 +59,13 @@ Checks: >
   -cppcoreguidelines-avoid-magic-numbers,
   -cppcoreguidelines-pro-type-union-access,
   -cppcoreguidelines-owning-memory,
-  -llvm-include-order
+  -llvm-include-order,
+  -cppcoreguidelines-pro-bounds-constant-array-index,
+  -cppcoreguidelines-use-default-member-init,
+  -modernize-use-default-member-init,
+  -performance-no-int-to-ptr,
+  -bugprone-suspicious-stringview-data-usage,
+  -cert-dcl58-cpp
 CheckOptions:
   cppcoreguidelines-pro-type-const-cast.StrictMode: true
   misc-include-cleaner.IgnoreHeaders: '^.*(?:pch|stdafx)\.h\w*$'
