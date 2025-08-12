@@ -1,14 +1,4 @@
-### Description
+Thank you for you contribution!
 
-A brief summary of the changes. Why are they necessary?
+Before opening a pull request make sure to comply with the [contribution guidelines](../doc/contributing.md).
 
-### Related Issues
-
-List related issues or feature requests.
-
-### Checklist
-
-- [ ] Code follows the project’s style guidelines
-- [ ] Changes are tested and verified
-- [ ] Documentation is updated (if applicable)
-- [ ] Related issues are linked
