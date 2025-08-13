@@ -1,17 +1,29 @@
-name: Request a Feature
+name: Feature request
 description: Propose a new feature
 labels: ["enhancement"]
-
 body:
-- type: markdown
-  attributes:
-    value: >
-      #### Thank you for your suggestion! Please ensure the feature request is not a duplicate.
+  - type: markdown
+    attributes:
+      value: |
+        ## Thank you for contributing!
 
-- type: textarea
-  attributes:
-    label: Feature Description
-    description: |
-      Clearly describe the feature and its purpose. Include the motivation behind it.
-  validations:
-    required: true
+        Please check if the feature request already exists before submitting.
+  - type: textarea
+    attributes:
+      label: Feature description
+      placeholder: Provide a clear description of the proposed feature.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Reason
+      placeholder: Explain why this feature would be useful.
+    validations:
+      required: false
+  - type: textarea
+    attributes:
+      label: Implementation idea
+      placeholder: Share any ideas on how this feature could be implemented.
+    validations:
+      required: false
+
