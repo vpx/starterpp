@@ -4,10 +4,12 @@ labels: ["bug"]
 body:
   - type: markdown
     attributes:
-      value: >
-        # Thank you for contributing!
+      value: |
+        ### Thank you for contributing!
 
-        Please ensure the issue is not a duplicate. For security-related bugs, please don't file an issue, instead, see the "Report a Vulnerability" section in the contributing.md file.
+        Please ensure the issue is not a duplicate.
+
+        For security-related bugs, please don't file an issue, instead, see the "Report a Vulnerability" section in the contributing.md file.
   - type: textarea
     attributes:
       label: Bug description
