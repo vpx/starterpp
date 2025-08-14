@@ -2,11 +2,13 @@
 
 ## Getting Started
 
-To get started simply run the script in `.github/setup.sh` from the root directory.
+First run the script at `.github/setup.sh` from the root directory.
+
+Next enable GitHub's built-in [vulnerability reports](https://docs.github.com/en/code-security/security-advisories/working-with-repository-security-advisories/configuring-private-vulnerability-reporting-for-a-repository).
 
 The script will automatically delete itself once it finishes running.
 
-If you are on Windows, you must have Git installed.
+If you are on Windows, run the script from Git Bash or WSL.
 
 ## Building
 
