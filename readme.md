@@ -1,6 +1,12 @@
 # starterpp
 
-A modern, cross-platform C++ executable template with continuous integration, CMake, unit tests, clang-format, clang-tidy, and includes a custom style guide. 
+## Getting Started
+
+To get started simply run the script in `.github/setup.sh` from the root directory.
+
+The script will automatically delete itself once it finishes running.
+
+If you are on Windows, you must have Git installed.
 
 ## Building
 
