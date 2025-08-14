@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) {{YEAR}} {{COPYRIGHT_HOLDER}}
+Copyright (c) {{LICENSE_YEAR}} {{LICENSE_HOLDER}}
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
