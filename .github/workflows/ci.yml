@@ -41,7 +41,6 @@ jobs:
               -DCMAKE_C_COMPILER=clang
               -DCMAKE_CXX_COMPILER=clang++ 
               -DCMAKE_CXX_FLAGS="-fsanitize=address,undefined"
-              -DCMAKE_EXE_LINKER_FLAGS="-fsanitize=address,undefined"
             build: --parallel
           - name: leak-sanitizer
             os: ubuntu-24.04
@@ -50,7 +49,6 @@ jobs:
               -DCMAKE_C_COMPILER=clang
               -DCMAKE_CXX_COMPILER=clang++ 
               -DCMAKE_CXX_FLAGS="-fsanitize=leak"
-              -DCMAKE_EXE_LINKER_FLAGS="-fsanitize=leak"
             build: --parallel
           - name: thread-sanitizer
             os: ubuntu-24.04
@@ -67,7 +65,6 @@ jobs:
               -DCMAKE_C_COMPILER=clang 
               -DCMAKE_CXX_COMPILER=clang++ 
               -DCMAKE_CXX_FLAGS="-fsanitize=memory -fno-optimize-sibling-calls -O1" 
-              -DCMAKE_EXE_LINKER_FLAGS="-fsanitize=memory" 
             build: --parallel
             test: '-LE "no-msan"'
     runs-on: ${{ matrix.os }}
@@ -105,3 +102,4 @@ jobs:
       - name: Test
         if: ${{ matrix.skip_test != true && matrix.skip_build != true }}
         run: ctest --test-dir build/ --output-on-failure -V ${{ matrix.test || '' }}
+
