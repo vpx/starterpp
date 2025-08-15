@@ -20,16 +20,19 @@ jobs:
           - name: build-and-test-macos
             os: macos-14
             timeout-minutes: 30
+            configure: -G Ninja
             build: --parallel
           - name: build-and-test-windows
             os: windows-2022
             timeout-minutes: 30
+            configure: -G Ninja
             build: --parallel
           - name: clang-tidy-and-valgrind
             os: ubuntu-24.04
             timeout-minutes: 60
             packages: valgrind
             configure: >
+              -G Ninja
               -DCMAKE_C_COMPILER=clang
               -DCMAKE_CXX_COMPILER=clang++
               -DSTARTERPP_CLANG_TIDY=ON
@@ -38,6 +41,7 @@ jobs:
             os: ubuntu-24.04
             timeout-minutes: 120
             configure: >
+              -G Ninja
               -DCMAKE_C_COMPILER=clang
               -DCMAKE_CXX_COMPILER=clang++ 
               -DCMAKE_CXX_FLAGS="-fsanitize=address,undefined"
@@ -46,6 +50,7 @@ jobs:
             os: ubuntu-24.04
             timeout-minutes: 120
             configure: >
+              -G Ninja
               -DCMAKE_C_COMPILER=clang
               -DCMAKE_CXX_COMPILER=clang++ 
               -DCMAKE_CXX_FLAGS="-fsanitize=leak"
@@ -54,6 +59,7 @@ jobs:
             os: ubuntu-24.04
             timeout-minutes: 120
             configure: >
+              -G Ninja
               -DCMAKE_C_COMPILER=clang
               -DCMAKE_CXX_COMPILER=clang++ 
               -DCMAKE_CXX_FLAGS="-fsanitize=thread -O1"
@@ -62,6 +68,7 @@ jobs:
             os: ubuntu-24.04
             timeout-minutes: 120
             configure: >
+              -G Ninja
               -DCMAKE_C_COMPILER=clang 
               -DCMAKE_CXX_COMPILER=clang++ 
               -DCMAKE_CXX_FLAGS="-fsanitize=memory -fno-optimize-sibling-calls -O1" 
