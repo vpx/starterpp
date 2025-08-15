@@ -97,9 +97,7 @@ jobs:
       - name: Configure
         run: cmake -B build -DCMAKE_BUILD_TYPE=Debug ${{ matrix.configure || '' }}
       - name: Build
-        if: ${{ matrix.skip_build != true }}
         run: cmake --build build --config Debug --verbose ${{ matrix.build || '' }}
       - name: Test
-        if: ${{ matrix.skip_test != true && matrix.skip_build != true }}
         run: ctest --test-dir build/ --output-on-failure -V ${{ matrix.test || '' }}
 
