@@ -109,7 +109,7 @@ tests/
 
 Avoid adding files directly to the root directory whenever possible.
 
-## Commit Tag
+## Commit Format
 
 The following is the commit format used in this project:
 
