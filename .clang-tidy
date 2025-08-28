@@ -65,10 +65,10 @@ Checks: >
   -modernize-use-default-member-init,
   -performance-no-int-to-ptr,
   -bugprone-suspicious-stringview-data-usage,
-  -cert-dcl58-cpp
+  -cert-dcl58-cpp,
+  -misc-include-cleaner
 CheckOptions:
   cppcoreguidelines-pro-type-const-cast.StrictMode: true
-  misc-include-cleaner.IgnoreHeaders: '.*/(pch|stdafx)\.h(pp)?$'
   modernize-use-default-member-init.UseAssignment: true
   performance-for-range-copy.WarnOnAllAutoCopies: true
   readability-identifier-naming.AbstractClassCase: 'lower_case'
