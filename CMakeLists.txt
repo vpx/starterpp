@@ -21,8 +21,6 @@ endif()
 
 add_subdirectory(src/)
 
-include(FetchContent)
-
 option(STARTERPP_BUILD_TESTS "Enable building tests" ON)
 if(STARTERPP_BUILD_TESTS)
     include(CTest)
