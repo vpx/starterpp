@@ -12,6 +12,7 @@
  - [Add a File](#add-a-file)
  - [Commit Format](#commit-format)
  - [Commit Tag](#commit-tag)
+ - [Branching Strategy](#branching-strategy)
 
 ## Report a Vulnerability
 
@@ -34,6 +35,7 @@ Before submitting a pull request, make sure that:
  - Each commit follows the project [commit format](#commit-format).
  - Documentation is added or updated when needed.
  - Tests are added or updated when needed.
+ - You follow the project [branching strategy](#branching-strategy).
 
 ## Report a Documentation Issue
 
@@ -155,4 +157,14 @@ Only these tags are allowed, and every commit must use one of them:
  - `chore`: Changes that do not affect production code (e.g., adding assets).
 
 Read the [commit format](#commit-format) section to see how to format the tag.
+
+## Branching Strategy
+
+Keep a single long‑lived branch named `main`.
+
+Make every change in an isolated branch or fork. Create a feature branch for each unit of work and open a pull request targeting main.
+
+Use semantic, descriptive branch names in the format: `username/short-description` (example: `alice/add-authentication`).
+
+Use GitHub tags to mark released versions (use semantic version tags like v1.2.0).
 
