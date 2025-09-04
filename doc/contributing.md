@@ -136,11 +136,11 @@ Signed-off-by: [Name And Surname] <[email@example.com]>
 Here's an example of a good commit:
 
 ```
-feat: Implement login functionality
+feat: Add config loader
 
-Implement login functionality on launcher.
+Load JSON from config/default.json and return a config object.
 
-Signed-off-by: Emanuele Milani <emanuele@milani.com>
+Signed-off-by: John Smith <johnsmith@mail.com>
 ```
 
 ### Commit Tag
