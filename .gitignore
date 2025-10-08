@@ -457,3 +457,6 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+!third_party/
+!third_party/**
